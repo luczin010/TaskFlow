@@ -79,3 +79,16 @@ TechFlow Solutions — cenário fictício de sistema de gestão de tarefas para 
 - Excluir tarefas
 - Definir prioridades (baixa, média e alta)
 - Organizar tarefas por status
+
+## Tecnologias utilizadas
+
+- Python
+- Flask
+- HTML e CSS
+- Pytest
+- Git e GitHub
+- GitHub Actions
+
+## Qualidade de software
+
+O projeto utiliza testes automatizados para verificar funcionalidades e reduzir erros. A integração contínua permite automatizar a execução dos testes sempre que alterações são enviadas ao repositório.
