@@ -14,3 +14,9 @@ Execute os commits na ordem aproximada abaixo, fazendo cada grupo de alteraçõe
 10. `ci: configure GitHub Actions`
 
 As mensagens são sugestões: só registre um commit quando a alteração correspondente estiver realmente no repositório.
+
+## Histórico de desenvolvimento
+
+O desenvolvimento do TaskFlow foi organizado em etapas, utilizando commits para registrar melhorias, documentação, ajustes visuais, testes automatizados e evolução das funcionalidades.
+
+Cada alteração permite acompanhar a evolução do projeto e facilita a identificação das modificações realizadas.
