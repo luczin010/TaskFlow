@@ -70,3 +70,12 @@ Depois de publicar o repositório, tire capturas reais de: Kanban Projects com 1
 
 ## Projeto acadêmico
 TechFlow Solutions — cenário fictício de sistema de gestão de tarefas para startup de logística.
+
+### Funcionalidades
+
+- Criar tarefas
+- Listar tarefas cadastradas
+- Editar tarefas
+- Excluir tarefas
+- Definir prioridades (baixa, média e alta)
+- Organizar tarefas por status
