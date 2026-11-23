@@ -1,0 +1,7 @@
+digraph UML {
+ graph [rankdir=TB, bgcolor="white", label="TaskFlow — Diagrama de Classes", labelloc=t, fontsize=18];
+ node [shape=record, style=filled, fillcolor=white, color="#315b86", fontname="Arial"];
+ Task [label="{Task|id: int\\ltitle: str\\ldescription: str\\lpriority: str\\lstatus: str|create()\\lupdate_status()\\ldelete()\\l}"];
+ TaskBoard [label="{TaskBoard|tasks: list[Task]|add_task(task)\\llist_tasks()\\lmove_task(id, status)\\lremove_task(id)\\l}"];
+ TaskBoard -> Task [label="gerencia 0..*", arrowhead=vee];
+}

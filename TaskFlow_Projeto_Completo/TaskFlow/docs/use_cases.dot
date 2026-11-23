@@ -1,0 +1,11 @@
+digraph UML {
+ graph [rankdir=LR, bgcolor="white", label="TaskFlow — Diagrama de Casos de Uso", labelloc=t, fontsize=18];
+ node [shape=ellipse, style=filled, fillcolor=white, color="#315b86", fontname="Arial"];
+ actor [shape=plaintext, label="Membro da equipe"];
+ cadastrar [label="Cadastrar tarefa"];
+ visualizar [label="Visualizar quadro"];
+ mover [label="Mover tarefa de status"];
+ excluir [label="Excluir tarefa"];
+ prioridade [label="Definir prioridade"];
+ actor -> cadastrar; actor -> visualizar; actor -> mover; actor -> excluir; actor -> prioridade;
+}

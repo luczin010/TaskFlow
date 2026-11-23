@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskFlow | Gestão de tarefas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header><div><h1>TaskFlow</h1><p>Organize tarefas, acompanhe o progresso e priorize entregas.</p></div></header>
+<main>
+<section class="new-task">
+  <h2>Adicionar tarefa</h2>
+  <form action="{{ url_for('create_task') }}" method="post">
+    <input name="title" placeholder="Título da tarefa" required maxlength="100">
+    <input name="description" placeholder="Descrição (opcional)" maxlength="300">
+    <select name="priority"><option>Baixa</option><option selected>Média</option><option>Alta</option></select>
+    <button type="submit">Adicionar</button>
+  </form>
+</section>
+<section class="board">
+{% for status, tasks in columns.items() %}
+  <div class="column">
+    <h2>{{ status }} <span>{{ tasks|length }}</span></h2>
+    {% for task in tasks %}
+    <article class="task">
+      <div class="priority priority-{{ task.priority|lower }}">{{ task.priority }}</div>
+      <h3>{{ task.title }}</h3><p>{{ task.description }}</p>
+      <div class="actions">
+      {% if status != "A Fazer" %}<form method="post" action="{{ url_for('update_status', task_id=task.id) }}"><input type="hidden" name="status" value="A Fazer"><button class="secondary">← A Fazer</button></form>{% endif %}
+      {% if status != "Em Progresso" %}<form method="post" action="{{ url_for('update_status', task_id=task.id) }}"><input type="hidden" name="status" value="Em Progresso"><button class="secondary">Em progresso</button></form>{% endif %}
+      {% if status != "Concluído" %}<form method="post" action="{{ url_for('update_status', task_id=task.id) }}"><input type="hidden" name="status" value="Concluído"><button class="secondary">Concluir ✓</button></form>{% endif %}
+      <form method="post" action="{{ url_for('delete_task', task_id=task.id) }}"><button class="danger">Excluir</button></form>
+      </div>
+    </article>
+    {% else %}<p class="empty">Nenhuma tarefa nesta coluna.</p>{% endfor %}
+  </div>
+{% endfor %}
+</section>
+</main>
+<footer>TaskFlow · Projeto acadêmico de Engenharia de Software</footer>
+</body>
+</html>
