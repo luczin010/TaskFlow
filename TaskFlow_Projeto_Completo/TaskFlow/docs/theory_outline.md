@@ -23,3 +23,7 @@ Pytest verifica o carregamento da página, cadastro, alteração de status e rem
 
 ## Limitações atuais
 O protótipo usa arquivo JSON local e não implementa autenticação, banco de dados compartilhado, permissões, nem sincronização entre usuários. Esses itens poderiam ser evoluções futuras.
+
+## Qualidade e testes
+
+O TaskFlow utiliza testes automatizados com Pytest para verificar o funcionamento da aplicação. Os testes ajudam a identificar falhas nas funcionalidades, garantindo maior confiabilidade e facilitando futuras alterações no código.
